@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\BarangController;
+use App\Http\Controllers\ProjectController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -19,12 +19,12 @@ Route::post('logout', [AuthController::class, 'logout'])->name('logout');
 
 
 Route::middleware('auth')->group(function (){
-    Route::get('/barang', [BarangController::class, 'tampil'])->name('barang.tampil');
-    Route::get('/barang/tambah', [BarangController::class, 'tambah'])->name('barang.tambah');
-    Route::post('barang/submit', [BarangController::class, 'submit'])->name('barang.submit');
-    Route::get('barang/edit/{id}', [BarangController::class, 'edit'])->name('barang.edit');
-    Route::post('barang/update/{id}', [BarangController::class, 'update'])->name('barang.update');
-    Route::post('barang/delete/{id}', [BarangController::class, 'delete'])->name('barang.delete');
+    Route::get('/project', [ProjectController::class, 'tampil'])->name('project.tampil');
+    Route::get('/project/tambah', [ProjectController::class, 'tambah'])->name('project.tambah');
+    Route::post('/project/submit', [ProjectController::class, 'submit'])->name('project.submit');
+    Route::get('/project/edit/{id}', [ProjectController::class, 'edit'])->name('project.edit');
+    Route::post('/project/update/{id}', [ProjectController::class, 'update'])->name('project.update');
+    Route::post('/project/delete/{id}', [ProjectController::class, 'delete'])->name('project.delete');
 });
 
 

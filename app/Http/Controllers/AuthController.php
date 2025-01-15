@@ -18,6 +18,7 @@ class AuthController extends Controller
         $user->email = $request->email;
         $user->password = bcrypt($request->password);
         $user->save();
+        dd($user);
         return redirect()->route('login');
     }
 
@@ -29,7 +30,7 @@ class AuthController extends Controller
 
         if(Auth::attempt($data)){
             $request->session()->regenerate();
-            return redirect()->route('barang.tampil');
+            return redirect()->route('project.tampil');
         }else{
             return redirect()->back()->with('gagal', 'Email atau Password anda Salah!');
         }

@@ -10,7 +10,7 @@
 <body>
     <h1 class="text-center mt-3">Welcome</h1>
     <div class="d-flex justify-content-center">
-        <a href="{{ route('barang.tampil') }}" class="btn btn-primary">Kelola Barang</a>
+        <a href="{{ route('project.tampil') }}" class="btn btn-primary">Kelola Barang</a>
     </div>
 </body>
 </html>
