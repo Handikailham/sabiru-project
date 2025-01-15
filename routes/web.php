@@ -17,9 +17,9 @@ Route::middleware('guest')->group(function(){
 
 Route::post('logout', [AuthController::class, 'logout'])->name('logout');
 
-Route::get('/barang', [BarangController::class, 'tampil'])->name('barang.tampil');
 
 Route::middleware('auth')->group(function (){
+    Route::get('/barang', [BarangController::class, 'tampil'])->name('barang.tampil');
     Route::get('/barang/tambah', [BarangController::class, 'tambah'])->name('barang.tambah');
     Route::post('barang/submit', [BarangController::class, 'submit'])->name('barang.submit');
     Route::get('barang/edit/{id}', [BarangController::class, 'edit'])->name('barang.edit');
