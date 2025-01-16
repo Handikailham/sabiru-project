@@ -24,6 +24,7 @@ class ProjectController extends Controller
         'nama' => 'required|string|max:255',
         'harga' => 'required|',
         'status' => 'required|string',
+        'tujuan' => 'required|string',
         'deskripsi' => 'required|string',
         'foto' => 'required|image|mimes:jpeg,png,jpg', // Validasi untuk gambar
     ]);
@@ -41,6 +42,7 @@ class ProjectController extends Controller
     $project->nama = $request->nama;
     $project->harga = $request->harga;
     $project->status = $request->status;
+    $project->tujuan = $request->tujuan;
     $project->deskripsi = $request->deskripsi;
     $project->foto = $fileName; // Simpan nama file di kolom foto
     $project->save();
@@ -67,6 +69,7 @@ class ProjectController extends Controller
         'nama' => 'required|string|max:255',
         'harga' => 'required|',
         'status' => 'required|string',
+        'tujuan' => 'required|string',
         'deskripsi' => 'required|string',
         'foto' => 'nullable|image|mimes:jpeg,png,jpg', // Validasi foto opsional
     ]);
@@ -91,6 +94,7 @@ class ProjectController extends Controller
     $project->nama = $request->nama;
     $project->harga = $request->harga;
     $project->status = $request->status;
+    $project->tujuan = $request->tujuan;
     $project->deskripsi = $request->deskripsi;
 
     // Simpan perubahan

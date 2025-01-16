@@ -35,6 +35,7 @@
                         <th class="border border-gray-300 px-4 py-2">Nama</th>
                         <th class="border border-gray-300 px-4 py-2">Harga</th>
                         <th class="border border-gray-300 px-4 py-2">Status</th>
+                        <th class="border border-gray-300 px-4 py-2">Tujuan</th>
                         <th class="border border-gray-300 px-4 py-2">Deskripsi</th>
                         <th class="border border-gray-300 px-4 py-2">Aksi</th>
                     </tr>
@@ -49,6 +50,7 @@
                         <td class="border border-gray-300 px-4 py-2">{{ $data->nama }}</td>
                         <td class="border border-gray-300 px-4 py-2">{{ $data->harga }}</td>
                         <td class="border border-gray-300 px-4 py-2">{{ $data->status }}</td>
+                        <td class="border border-gray-300 px-4 py-2">{{ $data->tujuan }}</td>
                         <td class="border border-gray-300 px-4 py-2">{{ $data->deskripsi }}</td>
                         <td class="border border-gray-300 px-4 py-2">
                             <div class="flex justify-center space-x-2">
