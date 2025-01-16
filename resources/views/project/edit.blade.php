@@ -45,16 +45,24 @@
                        class="w-full py-2 px-4 bg-gray-100 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
             </div>
 
+            <div class="space-y-2">
+                <label for="p" class="block text-sm font-medium text-gray-700">Tujuan Proyek</label>
+                <input type="text" id="project-name" name="tujuan" value="{{ $project->tujuan }}" required 
+                       class="w-full py-2 px-4 bg-gray-100 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
+            </div>
+
             <!-- Select Status -->
             <div class="space-y-2">
                 <label for="status" class="block text-sm font-medium text-gray-700">Status Proyek</label>
                 <select id="status" name="status" required 
                         class="w-full py-2 px-4 bg-gray-100 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
-                    <option value="belum_terlaksana" {{ $project->status == 'belum_terlaksana' ? 'selected' : '' }}>Belum Terlaksana</option>
-                    <option value="sedang_berjalan" {{ $project->status == 'sedang_berjalan' ? 'selected' : '' }}>Sedang Berjalan</option>
+                    <option value="belum terlaksana" {{ $project->status == 'belum_terlaksana' ? 'selected' : '' }}>Belum Terlaksana</option>
+                    <option value="sedang berjalan" {{ $project->status == 'sedang_berjalan' ? 'selected' : '' }}>Sedang Berjalan</option>
                     <option value="selesai" {{ $project->status == 'selesai' ? 'selected' : '' }}>Selesai</option>
                 </select>
             </div>
+
+            
 
             <!-- Input Deskripsi -->
             <div class="space-y-2">
