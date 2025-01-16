@@ -8,6 +8,26 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-fade-in {
+            animation: fade-in 2s ease-in-out;
+        }
+
+        html {
+        scroll-behavior: smooth;
+        }
+    </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
 
@@ -15,7 +35,7 @@
     <header class="bg-white shadow-md fixed w-full z-10">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#" class="flex items-center space-x-3"> <!-- Flex container with space between logo and text -->
-                <img src="{{ asset('image/logokiri.png') }}" alt="Logo" class="h-10"> <!-- Logo -->
+                <img src="{{ asset('image/sabiruicon.png') }}" alt="Logo" class="h-10"> <!-- Logo -->
                 <span class="text-2xl  font-bold text-blue-600">SARUDEV</span> <!-- Teks sebelah kanan logo -->
             </a>
             <nav class="hidden md:flex space-x-8">
@@ -37,9 +57,9 @@
     <section id="home" class="bg-cover bg-center relative" style="background-image: url('{{ asset('image/bg.jpg') }}'); height: 100vh;">
         <div class="bg-black bg-opacity-70 h-full flex items-center justify-center">
             <div class="text-center text-white px-6">
-                <h1 class="text-5xl font-bold mb-4">Hi, Selamat Datang di Sarudev!</h1>
+                <h1 class="text-5xl font-bold mb-4 animate-fade-in">Hi, Selamat Datang di Sarudev!</h1>
                 <p class="text-lg mb-8">Samudra Biru adalah startup baru yang fokus pada Game Edukasi, Website dan Mobile.</p>
-                <a href="#about" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg">
+                <a href="#product" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg">
                     Explore Now
                 </a>
             </div>
@@ -67,16 +87,16 @@
                             {{-- <img src="{{ url('storage/img/' . $item->foto) }}" alt="Tall slender porcelain bottle with natural clay textured body and cork stopper." class="aspect-square w-full rounded-lg bg-gray-200 object-cover group-hover:opacity-75 xl:aspect-[7/8]"> --}}
             
                         <!-- Nama -->
-                        <h3 class="text-2xl font-bold text-blue-600">{{ $item->nama }}</h3>
+                        <h3 class="text-2xl font-bold text-blue-600 text-start">{{ $item->nama }}</h3>
             
                         <!-- Deskripsi -->
-                        <p class="mt-4 text-gray-600">{{ $item->deskripsi }}</p>
+                        <p class="mt-4 text-gray-600 text-start">{{ $item->deskripsi }}</p>
             
                         <!-- Tujuan -->
-                        <p class="mt-2 text-gray-500"><strong>Tujuan:</strong> {{ $item->tujuan }}</p>
+                        <p class="mt-2 text-gray-500 text-start"><strong>Tujuan:</strong> {{ $item->tujuan }}</p>
             
                         <!-- Status -->
-                        <p class="mt-2 text-gray-500">
+                        <p class="mt-2 text-gray-500 text-start">
                             <strong>Status:</strong>
                             @if ($item->status === 'belum terlaksana')
                                 <span class="text-yellow-500 font-bold">Belum Terlaksana</span>
@@ -90,7 +110,7 @@
                         </p>
             
                         <!-- Harga -->
-                        <p class="mt-4 text-gray-800 font-bold">Rp{{ number_format($item->harga, 0, ',', '.') }}</p>
+                        <p class="mt-4 text-gray-800 font-bold text-start">Rp{{ number_format($item->harga, 0, ',', '.') }}</p>
                     </div>
                 @endforeach
             </div>
@@ -111,11 +131,13 @@
             Kami di sini untuk membantu! Baik Anda sedang memikirkan proyek, ingin berkolaborasi, atau hanya ingin menyapa, jangan ragu untuk menghubungi kami.
         </p>
         <div class="mt-8">
-            <a href="{{ route('project.tampil') }}" 
-               class="bg-white text-blue-700 hover:bg-gray-100 font-bold py-4 px-10 rounded-full shadow-lg 
-                      transition-all transform hover:-translate-y-2 hover:scale-105">
-               Get In Touch
-            </a>
+            <a href="https://wa.me/6282242698548" 
+            class="bg-white text-blue-700 hover:bg-gray-100 font-bold py-4 px-10 rounded-full shadow-lg 
+            transition-all transform hover:-translate-y-2 hover:scale-105"
+            target="_blank">
+            Get In Touch
+        </a>
+
         </div>
         <div class="mt-12 flex justify-center space-x-8">
             <a href="https://www.facebook.com/Samudrabiru-Developer-705906999770064/" target="_blank" class="text-3xl hover:text-gray-200 transition-colors">
